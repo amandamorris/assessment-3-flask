@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+    <title>Application Form</title>
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- your html goes here -->
+
+<h1>Job Application</h1>
+<!-- ToDo: currently the text box fills the whole line... -->
+<p class="instructions">Please fill out the following form to be considered for one of our open positions.</p>
+
+<form action="/application-success" method="POST">
+    <div>
+        <label for="firstname">First Name </label><input type="text" id="firstname" name="firstname">
+    </div>
+    <div>
+        <label for="lastname">Last Name </label><input type="text" id="lastname" name="lastname">
+    </div>
+    <div>
+        <label for="salary_requirements">Salary Requirement</label><input type="text" id="salary_requirements" name="salary">
+    </div>
+    <div>
+        <label for="job">Job</label> 
+            <select id="job" name="job">
+            <!-- ToDo: dictionary keys are not ordered, might want to fix order -->
+                {% for job in open_jobs %}
+                <option value={{ job }}>{{ open_jobs[job] }}</option>
+                {% endfor %}
+            </select>
+        </span>
+    </div>
+    <input type="submit" name="submit" value="Submit Application">
+</form>
+</body>
+</html>
