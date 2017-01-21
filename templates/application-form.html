@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Application Form</title>
-    <link href="styles.css" rel="stylesheet">
+    <link href="static/styles.css" rel="stylesheet">
 </head>
 <body>
 
@@ -27,7 +27,7 @@
             <select id="job" name="job">
             <!-- ToDo: dictionary keys are not ordered, might want to fix order -->
                 {% for job in open_jobs %}
-                <option value={{ job }}>{{ open_jobs[job] }}</option>
+                <option value={{ open_jobs[job] }}>{{ open_jobs[job] }}</option>
                 {% endfor %}
             </select>
         </span>
