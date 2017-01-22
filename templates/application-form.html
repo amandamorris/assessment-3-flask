@@ -1,10 +1,9 @@
-<!doctype html>
-<html>
 <head>
     <title>Application Form</title>
-    <link href="static/styles.css" rel="stylesheet">
 </head>
-<body>
+{% extends 'base.html' %}
+
+{% block body %}
 
 <!-- your html goes here -->
 
@@ -27,7 +26,7 @@
             <select id="job" name="job">
             <!-- ToDo: dictionary keys are not ordered, might want to fix order -->
                 {% for job in open_jobs %}
-                <option value={{ open_jobs[job] }}>{{ open_jobs[job] }}</option>
+                <option value="{{ open_jobs[job] }}">{{ open_jobs[job] }}</option>
                 {% endfor %}
             </select>
         </span>
@@ -35,4 +34,4 @@
     <input type="submit" name="submit" value="Submit Application">
 </form>
 </body>
-</html>
+{% endblock %}

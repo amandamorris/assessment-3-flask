@@ -1,16 +1,16 @@
-<!doctype html>
-<html>
 <head>
-    <title>Application Response</title>
+    <title>Application Confirmation</title>
 </head>
+{% extends 'base.html' %}
+
+{% block body %}
 <body>
 
 <!-- fill this in -->
 <h1>Your application confirmation!</h1>
 
 Dear {{ first_name }} {{ last_name }}, <br>
-Thank you for applying for {{ job }}, and indicating your minimum salary of
-{{ "$%.2f" % salary }}.  We will be in touch shortly.
+Thank you for applying for the {{ job }} position, and indicating your minimum salary of {{ "${:,.2f}".format(salary) }}.  We will be in touch shortly.
 
 </body>
-</html>
+{% endblock %}
